@@ -1,16 +1,26 @@
-#!usr/bin/env bash
+#!/bin/sh
+echo $0
+VIMRC="$HOME/.vimrc"
+VIMRC_BAK="$HOME/.vimrc.bak"
+REPO_VIMRC="$PWD/.vimrc"
 
 # Backup the current vimrc
-if [ -e "~/.vimrc" ]
+if [ -e "$VIMRC" ];
 then
-	if [ -e "~/.vimrc.bak" ]
+	if [ -L "$VIMRC" ];
 	then
-		echo "~/.vimrc.bak already exists, delete this file before running this script so the backup is not lost"
+		echo "Current .vimrc file is a symlink pointing to $(readlink "$VIMRC"), deleting symlink"
+		rm "$VIMRC"
+	elif [ -e "$VIMRC_BAK" ];
+	then
+		echo "$VIMRC_BAK already exists, delete this file before running this script so the backup is not lost"
 		exit 1
 	else
-		mv "~/.vimrc" "~/.vimrc.bak"
+		mv "$VIMRC" "$VIMRC_BAK"
 	fi
 fi
 
 # Create a link to the repo's vimrc
-ln -s "./.vimrc" "~/.vimrc"
+ln -s "$REPO_VIMRC" "$VIMRC"
+
+vim +PluginInstall
