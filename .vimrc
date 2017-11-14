@@ -72,6 +72,14 @@ Plugin 'easymotion/vim-easymotion'
 " https://vimawesome.com/plugin/repeat-vim
 Plugin 'tpope/vim-repeat'
 
+" SimpylFold python folding
+" https://vimawesome.com/plugin/simpylfold
+Plugin 'tmhedberg/simpylfold'
+
+" FastFold faster folding
+" https://vimawesome.com/plugin/simpylfold
+Plugin 'konfekt/fastfold'
+
 call vundle#end()
 
 
@@ -96,6 +104,8 @@ set number
 set shiftwidth=4
 set tabstop=4
 set autoindent
+set foldmethod=syntax
+set fixeol
 
 " clean up whitespace on write
 autocmd BufWrite * silent! call CleanTrailingWhiteSpace()
@@ -131,7 +141,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 """ End Syntastic
 
@@ -205,3 +215,8 @@ omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 """ End EasyMotion
+
+""" Begin SimpylFold
+let g:SimpylFold_docstring_preview=1
+nnoremap <Space> za
+""" End SimpylFold
