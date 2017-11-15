@@ -105,7 +105,7 @@ set shiftwidth=4
 set tabstop=4
 set autoindent
 set foldmethod=syntax
-set fixeol
+set foldlevel=99
 
 " clean up whitespace on write
 autocmd BufWrite * silent! call CleanTrailingWhiteSpace()
@@ -143,6 +143,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
 """ End Syntastic
 
 """ Begin CtrlP
@@ -173,6 +174,9 @@ endif
 """ Begin YouCompleteMe
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+nnoremap <silent> <leader>r :YcmCompleter GoToReferences<CR>
+nnoremap >silent> <leader>g :YcmCompleter GoToDefinition<CR>
 """ End YouCompleteMe
 
 """ Begin EasyMotion
