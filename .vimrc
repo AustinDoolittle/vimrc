@@ -106,6 +106,7 @@ set tabstop=4
 set autoindent
 set foldmethod=syntax
 set foldlevel=99
+set number relativenumber
 
 " clean up whitespace on write
 autocmd BufWrite * silent! call CleanTrailingWhiteSpace()
@@ -176,7 +177,7 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 
 nnoremap <silent> <leader>r :YcmCompleter GoToReferences<CR>
-nnoremap >silent> <leader>g :YcmCompleter GoToDefinition<CR>
+nnoremap <silent> <leader>g :YcmCompleter GoToDefinition<CR>
 """ End YouCompleteMe
 
 """ Begin EasyMotion
