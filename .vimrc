@@ -13,11 +13,11 @@ Plugin 'VundleVim/Vundle.vim'
 " https://vimawesome.com/plugin/fugitive-vim
 Plugin 'tpope/vim-fugitive'
 
-" NerdTree file explorer
+" NERDTree file explorer
 " https://vimawesome.com/plugin/fugitive-vim
 Plugin 'scrooloose/nerdtree'
 
-" NerdTree git plugin
+" NERDTree git plugin
 " https://github.com/Xuyuanp/nerdtree-git-plugin
 Plugin 'xuyuanp/nerdtree-git-plugin'
 
@@ -123,12 +123,13 @@ nnoremap <silent> <CR> o<ESC>
 nnoremap <silent> <S-CR> O<ESC>
 """ End Vanilla Vim
 
-""" Begin NerdTree
-" auto open NerdTree if no file is specified
+""" Begin NERDTree
+" auto open NERDTree if no file is specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 noremap <silent> <C-N> :NERDTreeToggle<cr>
-""" End NerdTree
+let NERDTreeIgnore = ['\.pyc$']
+""" End NERDTree
 
 """ Begin NerdCommenter
 filetype plugin on
@@ -144,7 +145,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
+let g:syntastic_mode_map = {
+	\ "mode": "passive",
+	\ }
 """ End Syntastic
 
 """ Begin CtrlP
