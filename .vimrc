@@ -118,9 +118,6 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
-
-nnoremap <silent> <CR> o<ESC>
-nnoremap <silent> <S-CR> O<ESC>
 """ End Vanilla Vim
 
 """ Begin NERDTree
@@ -157,7 +154,7 @@ let g:ctrlp_working_path_mode = 'r'
 
 let g:ctrlp_custom_ignore = {
 	\ 'dir':  '\v[\/]\.(git|hg|svn|pyc)$',
-	\ 'file': '\v\.(so|swp|zip)$',
+	\ 'file': '\v\.(so|swp|zip|pyc)$',
 	\ }
 """ End CtrlP
 
@@ -180,7 +177,7 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 
 nnoremap <silent> <leader>r :YcmCompleter GoToReferences<CR>
-nnoremap <silent> <leader>g :YcmCompleter GoToDefinition<CR>
+nnoremap <silent> <leader>g :YcmCompleter GoTo<CR>
 """ End YouCompleteMe
 
 """ Begin EasyMotion
@@ -197,6 +194,7 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
+let g:EasyMotion_smartcase = 1
 
 " These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
 " Without these mappings, `n` & `N` works fine. (These mappings just provide
