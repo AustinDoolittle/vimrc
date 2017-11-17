@@ -107,6 +107,12 @@ set autoindent
 set foldmethod=syntax
 set foldlevel=99
 set number relativenumber
+set t_Co=256
+set scrolloff=1
+set sidescrolloff=5
+set history=1000
+set smarttab
+
 
 " clean up whitespace on write
 autocmd BufWrite * silent! call CleanTrailingWhiteSpace()

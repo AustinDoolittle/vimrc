@@ -23,4 +23,9 @@ fi
 # Create a link to the repo's vimrc
 ln -s "$REPO_VIMRC" "$VIMRC"
 
-vim +PluginInstall
+sudo apt-get install vim cmake python-dev libxml2-dev libxslt-dev
+git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+
+vim -c 'PluginInstall' -c 'qa!'
+$HOME/.vim/bundle/youcompleteme/install.py --clang-completer
+
