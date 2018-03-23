@@ -9,29 +9,21 @@ call vundle#begin()
 " *INCEPTION BWAAAAAAH*
 Plugin 'VundleVim/Vundle.vim'
 
-" Fugitive git wrapper
-" https://vimawesome.com/plugin/fugitive-vim
-Plugin 'tpope/vim-fugitive'
-
-" NERDTree file explorer
-" https://vimawesome.com/plugin/fugitive-vim
-Plugin 'scrooloose/nerdtree'
-
-" NERDTree git plugin
-" https://github.com/Xuyuanp/nerdtree-git-plugin
-Plugin 'xuyuanp/nerdtree-git-plugin'
-
 " Syntastic syntax highlighting
 " https://vimawesome.com/plugin/syntastic
 Plugin 'scrooloose/syntastic'
 
+" git-gutter git diff next to the numbers
+" https://vimawesome.com/plugin/vim-gitgutter
+Plugin 'airblade/vim-gitgutter'
+
+" Dash documentation integration
+" https://github.com/rizzatti/dash.vim
+Plugin 'rizzatti/dash.vim'
+
 " surround.vim surround shortcuts
 " https://vimawesome.com/plugin/surround-vim
 Plugin 'tpope/vim-surround'
-
-" ctrlp fuzzy finder
-" https://vimawesome.com/plugin/ctrlp-vim-red
-Plugin 'kien/ctrlp.vim'
 
 " Solarized colors
 " https://vimawesome.com/plugin/vim-colors-solarized-ours
@@ -56,10 +48,6 @@ Plugin 'majutsushi/tagbar'
 " NerdCommenter commenting utility
 " https://vimawesome.com/plugin/the-nerd-commenter
 Plugin 'scrooloose/nerdcommenter'
-
-" gitgutter git diff utility
-" https://vimawesome.com/plugin/vim-gitgutter
-Plugin 'airblade/vim-gitgutter'
 
 " youcompleteme autocomplete engine
 " https://vimawesome.com/plugin/youcompleteme
@@ -125,14 +113,6 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 """ End Vanilla Vim
-
-""" Begin NERDTree
-" auto open NERDTree if no file is specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-noremap <silent> <C-N> :NERDTreeToggle<cr>
-let NERDTreeIgnore = ['\.pyc$']
-""" End NERDTree
 
 """ Begin NerdCommenter
 filetype plugin on
